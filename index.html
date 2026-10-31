@@ -1,412 +1,647 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <link rel="icon" type="image/png" href="https://cdn.pixabay.com/photo/2025/01/06/00/03/g-9307713_1280.png">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Griffith Resellz | Private Supplier Vault</title>
-  <meta name="description" content="Direct factory supplier plugs I spent thousands vetting and testing. High profit flips, zero guesswork.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVW Partners</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 332 150'%3E%3Cpolygon points='10,130 34,130 74,10 50,10' fill='%2318243E'/%3E%3Cpolygon points='72,76 96,76 118,10 94,10' fill='%2318243E'/%3E%3Cpolygon points='134,130 158,130 198,10 174,10' fill='%2318243E'/%3E%3Cpolygon points='50,10 74,10 96,76 72,76' fill='%234E7496'/%3E%3Cpolygon points='94,10 118,10 158,130 134,130' fill='%234E7496'/%3E%3Cpolygon points='174,10 198,10 238,130 214,130' fill='%234E7496'/%3E%3Cpolygon points='214,130 238,130 260,64 236,64' fill='%2318243E'/%3E%3Cpolygon points='258,130 282,130 322,10 298,10' fill='%2318243E'/%3E%3Cpolygon points='236,64 260,64 282,130 258,130' fill='%234E7496'/%3E%3C/svg%3E">
+    <meta name="description" content="MVW Partners is a UK commercial procurement and supply chain management firm connecting public sector contracting authorities with tier-one trade manufacturers.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif']
-          },
-          colors: {
-            obsidian: '#040507',
-            cardbg: '#0a0c10',
-            cardborder: 'rgba(255, 255, 255, 0.08)',
-            accent: '#6366f1',
-            accentGlow: 'rgba(99, 102, 241, 0.35)',
-            steel: '#94a3b8'
-          }
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        mvw: {
+                            navy: '#18243E',
+                            blue: '#4E7496',
+                            dark: '#080D1A',
+                            surface: '#0F172A'
+                        }
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
+    </script>
 
-  <style>
-    body {
-      background-color: #040507;
-      color: #f1f5f9;
-      -webkit-tap-highlight-color: transparent;
-    }
-    
-    .femto-vignette {
-      background: radial-gradient(circle at 50% 20%, rgba(99, 102, 241, 0.08) 0%, rgba(4, 5, 7, 0.95) 80%);
-    }
+    <style>
+        /* High-End Institutional Hero Backdrop with Subtle Drift */
+        @keyframes pulseGlow {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.25; }
+            50% { transform: translate(20px, -15px) scale(1.06); opacity: 0.35; }
+        }
+        .hero-bg {
+            background-color: #080D1A;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 56px 56px;
+        }
+        .ambient-light {
+            animation: pulseGlow 12s ease-in-out infinite;
+            background: radial-gradient(circle, rgba(78, 116, 150, 0.45) 0%, rgba(24, 36, 62, 0) 70%);
+        }
 
-    .griffith-hero-art {
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 90%);
-      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 90%);
-      filter: contrast(125%) brightness(85%) drop-shadow(0 0 45px rgba(99,102,241,0.25));
-    }
+        /* Staggered Scroll Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
 
-    .glass-panel {
-      background: rgba(10, 12, 16, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-    }
+        /* Enterprise Card Micro-Interactions & Top Border Sweep */
+        .exec-card {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .exec-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #18243E, #4E7496);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .exec-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 48px -12px rgba(24, 36, 62, 0.12);
+            border-color: #cbd5e1;
+        }
+        .exec-card:hover::before {
+            transform: scaleX(1);
+        }
 
-    .tap-effect:active {
-      transform: scale(0.97);
-    }
-  </style>
+        /* Navigation Underline Sweep */
+        .nav-link {
+            position: relative;
+            padding-bottom: 4px;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1.5px;
+            background-color: #18243E;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+    </style>
 </head>
-<body class="selection:bg-indigo-500 selection:text-white pb-24 sm:pb-12">
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-mvw-navy selection:text-white">
 
-  <!-- TOP ANNOUNCEMENT TICKER -->
-  <div class="bg-[#08090d] border-b border-white/5 py-2 px-3 text-[11px] text-slate-400">
-    <div class="max-w-4xl mx-auto flex items-center justify-between">
-      <div class="flex items-center gap-1.5 font-medium truncate">
-        <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></span>
-        <span class="text-white font-bold tracking-wide uppercase">@griffithresellz</span>
-        <span class="hidden xs:inline text-slate-500">• 2026 Batch Directory</span>
-      </div>
-
-      <!-- Currency Switcher -->
-      <div class="flex items-center gap-1 shrink-0 font-mono text-[10px]">
-        <button onclick="setCurrency('GBP')" id="btn-curr-GBP" class="px-1.5 py-0.5 rounded font-bold bg-indigo-600 text-white">GBP £</button>
-        <button onclick="setCurrency('EUR')" id="btn-curr-EUR" class="px-1.5 py-0.5 rounded font-bold text-slate-400 hover:text-white">EUR €</button>
-        <button onclick="setCurrency('USD')" id="btn-curr-USD" class="px-1.5 py-0.5 rounded font-bold text-slate-400 hover:text-white">USD $</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- NAVIGATION (CENTERED CLEAN LOGO) -->
-  <header class="sticky top-0 z-40 backdrop-blur-xl bg-[#040507]/90 border-b border-white/5 px-4 py-3">
-    <div class="max-w-4xl mx-auto relative flex items-center justify-between">
-      <div class="w-20 hidden sm:block"></div>
-
-      <!-- Centered Modern Brand -->
-      <a href="#" class="mx-auto sm:mx-0 flex flex-col items-center justify-center text-center">
-        <span class="font-sans font-black text-base tracking-[0.2em] text-white uppercase">
-          GRIFFITH<span class="text-cyan-400">RESELLZ</span>
-        </span>
-        <span class="text-[9px] text-slate-400 font-mono tracking-widest uppercase">DIRECT FACTORY SUPPLIERS</span>
-      </a>
-
-      <!-- Quick Action -->
-      <button 
-        onclick="openVaultCheckout()"
-        class="tap-effect absolute right-0 sm:relative px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs tracking-wide shadow-[0_0_20px_rgba(99,102,241,0.3)] transition"
-      >
-        Get Vault
-      </button>
-    </div>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section class="relative pt-8 pb-8 px-4 overflow-hidden femto-vignette border-b border-white/5">
-    
-    <!-- Griffith Backdrop Render -->
-    <div class="absolute inset-0 pointer-events-none flex justify-center items-start opacity-20 sm:opacity-25 z-0 -top-8">
-      <img 
-        src="_femto_griffith_render_2__by_wtfbooomsh_dfechiv-fullview.jpg" 
-        id="griffith-bg-art"
-        alt="Griffith Emblem" 
-        class="griffith-hero-art h-[440px] sm:h-[520px] object-top object-contain"
-        onerror="this.style.display='none'"
-      />
-    </div>
-
-    <div class="relative z-10 max-w-xl mx-auto text-center mt-2">
-      <!-- Main Hook -->
-      <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-[1.25] mb-3.5">
-        I make thousands every single month reselling, <br class="hidden xs:inline" />
-        <span class="bg-gradient-to-r from-cyan-400 via-indigo-300 to-blue-400 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(34,211,238,0.45)]">
-          now it's your turn.
-        </span>
-      </h1>
-
-      <!-- Subtitle -->
-      <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6 font-normal max-w-lg mx-auto">
-        Here are the exact, battle-tested suppliers I personally use. It's foolproof. I tested every batch and weeded out all the bad quality ones so you don't have to.
-      </p>
-
-      <!-- Fast Proof Badges -->
-      <div class="flex items-center justify-center gap-4 text-[11px] text-slate-400 font-mono pb-2">
-        <div class="flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-          <span>Tested 1:1 Batches</span>
-        </div>
-        <div class="flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-          <span>Instant Access</span>
-        </div>
-        <div class="flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-          <span>Direct Plugs</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 1: ALL-SUPPLIERS MASTER VAULT -->
-  <section id="bundle-anchor" class="max-w-xl mx-auto px-4 pt-6 pb-4">
-    <div class="relative rounded-2xl bg-gradient-to-b from-[#11131c] to-[#090b10] border-2 border-indigo-500/60 p-5 shadow-[0_0_35px_rgba(99,102,241,0.25)] overflow-hidden">
-      
-      <!-- Top Flash Tag -->
-      <div class="flex items-center justify-between pb-3 border-b border-white/10 mb-3.5">
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-          <span class="font-sans font-black text-xs text-white uppercase tracking-wider">ALL SUPPLIERS MASTER VAULT</span>
-        </div>
-        <span class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-mono text-[10px] font-bold border border-indigo-500/30">
-          EVERY CATEGORY INCLUDED
-        </span>
-      </div>
-
-      <div>
-        <h2 class="text-xl sm:text-2xl font-black text-white leading-tight">
-          The Complete Griffith Supplier Vault
-        </h2>
-        <p class="text-xs text-slate-300 mt-1 mb-4 leading-relaxed">
-          Skip buying single lists. Get instant access to every single tested supplier category in one unified private directory, with verified product photos and direct one-click supplier links.
-        </p>
-
-        <!-- Bullet Highlights -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-200 mb-5">
-          <div class="flex items-center gap-2 bg-white/5 p-2 rounded-lg border border-white/5">
-            <span class="text-cyan-400 font-bold">✓</span> All 12 Full Supplier Categories
-          </div>
-          <div class="flex items-center gap-2 bg-white/5 p-2 rounded-lg border border-white/5">
-            <span class="text-cyan-400 font-bold">✓</span> 1:1 Quality Guaranteed
-          </div>
-          <div class="flex items-center gap-2 bg-white/5 p-2 rounded-lg border border-white/5">
-            <span class="text-cyan-400 font-bold">✓</span> Direct Overseas Factory Pricing
-          </div>
-          <div class="flex items-center gap-2 bg-white/5 p-2 rounded-lg border border-white/5">
-            <span class="text-cyan-400 font-bold">✓</span> Lifetime Access & Continuous Updates
-          </div>
-        </div>
-
-        <!-- Master Buy Action (Goes directly to Payhip Vault) -->
-        <div class="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
-          <div>
-            <div class="flex items-baseline gap-1.5">
-              <span id="price-master" class="text-2xl font-black text-white font-mono">£29.99</span>
-              <span class="text-xs text-slate-500 line-through font-mono">£99.99</span>
+    <!-- Top Institutional Status Bar -->
+    <div class="bg-mvw-dark text-slate-300 text-xs py-2.5 px-6 border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-2.5">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span class="font-medium tracking-wide text-slate-200">UK Public &amp; Commercial Supply Chain Operations: Active</span>
             </div>
-            <div class="text-[10px] text-emerald-400 font-mono">Instant digital unlock</div>
-          </div>
-
-          <a 
-            href="https://payhip.com/b/hkpsa"
-            class="tap-effect flex-1 sm:flex-none px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-500 via-indigo-600 to-indigo-700 hover:brightness-110 text-white font-black text-xs uppercase tracking-wider shadow-[0_0_20px_rgba(6,182,212,0.4)] transition flex items-center justify-center gap-2 text-center"
-          >
-            <span>Unlock All Suppliers</span>
-            <svg class="w-4 h-4 stroke-[3]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 2: INDIVIDUAL NICHE LISTS (12 CATEGORIES AT FLAT £9.99) -->
-  <section class="max-w-xl mx-auto px-4 pt-6 pb-12">
-    <div class="flex items-center justify-between mb-3 px-1">
-      <div>
-        <h3 class="text-base font-extrabold text-white">Individual Supplier Plugs</h3>
-        <p class="text-[11px] text-slate-400">If you only flip one specific category</p>
-      </div>
-      <span class="text-[10px] text-slate-500 font-mono">12 Categories</span>
-    </div>
-
-    <div class="space-y-2.5" id="category-cards-container">
-      <!-- Injected via JavaScript with actual brand names and flat 9.99 price -->
-    </div>
-  </section>
-
-  <!-- STICKY BOTTOM QUICK-BUY BAR (MOBILE) -->
-  <div class="sm:hidden fixed bottom-0 inset-x-0 z-40 bg-[#06070a]/95 backdrop-blur-md border-t border-white/10 px-4 py-2.5">
-    <div class="flex items-center justify-between gap-3 max-w-xl mx-auto">
-      <div>
-        <div class="text-[10px] text-slate-400 uppercase font-mono">Full Supplier Vault</div>
-        <div class="text-base font-black text-white font-mono leading-none">
-          <span id="price-sticky">£29.99</span>
-          <span class="text-[10px] text-emerald-400 ml-1 font-bold">ALL 12</span>
-        </div>
-      </div>
-      <a 
-        href="https://payhip.com/b/hkpsa"
-        class="tap-effect flex-1 max-w-[200px] py-2.5 rounded-xl bg-indigo-600 active:bg-indigo-500 text-white font-black text-xs uppercase tracking-wider shadow-[0_0_15px_rgba(99,102,241,0.4)] transition text-center"
-      >
-        Unlock Master Vault
-      </a>
-    </div>
-  </div>
-
-  <script>
-    const PAYHIP_VAULT_URL = "https://payhip.com/b/hkpsa";
-    const PAYHIP_SINGLE_CATEGORY_URL = "https://payhip.com/b/K4hn5";
-
-    // 12 Scraped Categories with actual brand names and flat £9.99 pricing
-    const CATEGORIES = [
-      { 
-        id: 'shoes', 
-        title: 'All Shoes & Sneakers Plug', 
-        price: 9.99, 
-        desc: 'Nike Dunk Lows, Jordan 4s, Travis Scott, Bapesta, Balenciaga Track. 1:1 shape & suede.', 
-        count: '45+ Products' 
-      },
-      { 
-        id: 'hoodies-sweaters', 
-        title: 'All Hoodies & Sweaters Plug', 
-        price: 9.99, 
-        desc: 'Sp5der, Denim Tears, Ralph Lauren knitwear, Essentials, Stüssy fleece zip-ups.', 
-        count: '35+ Products' 
-      },
-      { 
-        id: 't-shirts', 
-        title: 'All T-Shirts Plug', 
-        price: 9.99, 
-        desc: 'Corteiz, Trapstar, Broken Planet, Hellstar, Chrome Hearts heavyweight blanks.', 
-        count: '40+ Products' 
-      },
-      { 
-        id: 'jackets', 
-        title: 'All Jackets & Puffers Plug', 
-        price: 9.99, 
-        desc: 'Trapstar Hyperdrive, Corteiz bolo puffers, Arc\'teryx Beta LT, Canada Goose, North Face Nuptse.', 
-        count: '25+ Products' 
-      },
-      { 
-        id: 'pants-shorts', 
-        title: 'All Pants & Shorts Plug', 
-        price: 9.99, 
-        desc: 'Eric Emanuel EE shorts, Nike Tech Fleece joggers, Stone Island cargo trousers.', 
-        count: '30+ Products' 
-      },
-      { 
-        id: 'jersey', 
-        title: 'All Retro & Club Jerseys Plug', 
-        price: 9.99, 
-        desc: 'Real Madrid, Barcelona, Man United, retro 90s vintage kits, embroidered player badges.', 
-        count: '50+ Products' 
-      },
-      { 
-        id: 'accessories', 
-        title: 'All Accessories & Belts Plug', 
-        price: 9.99, 
-        desc: 'BB Simon rhinestone belts, Ferragamo & LV initial buckles, Prada sunglasses.', 
-        count: '30+ Products' 
-      },
-      { 
-        id: 'perfume', 
-        title: 'All Fragrances & Perfume Plug', 
-        price: 9.99, 
-        desc: 'Dior Sauvage Elixir, Creed Aventus, Baccarat Rouge 540, Tom Ford with 1:1 bottles.', 
-        count: '20+ Products' 
-      },
-      { 
-        id: 'bags', 
-        title: 'All Bags & Backpacks Plug', 
-        price: 9.99, 
-        desc: 'Trapstar crossbody bags, Goyard Saint Louis totes, MCM & Louis Vuitton Christopher backpacks.', 
-        count: '25+ Products' 
-      },
-      { 
-        id: 'electronics', 
-        title: 'All Electronics & Audio Plug', 
-        price: 9.99, 
-        desc: 'Apple AirPods Max, AirPods Pro 2 (valid serials, spatial audio), Dyson Airwrap.', 
-        count: '28+ Products' 
-      },
-      { 
-        id: 'headwear', 
-        title: 'All Headwear & Beanies Plug', 
-        price: 9.99, 
-        desc: 'Arc\'teryx bird head beanies, New Era fitted 59FIFTY caps, Chrome Hearts trucker hats.', 
-        count: '20+ Products' 
-      },
-      { 
-        id: 'other-stuff', 
-        title: 'All Other Viral Stock Plug', 
-        price: 9.99, 
-        desc: 'Stanley Quencher 40oz tumblers, Jellycat plushies, Supreme accessories.', 
-        count: '15+ Products' 
-      }
-    ];
-
-    let currentCurrency = 'GBP';
-    const currencyMultipliers = { GBP: 1.0, EUR: 1.17, USD: 1.28 };
-    const currencySymbols = { GBP: '£', EUR: '€', USD: '$' };
-
-    function setCurrency(curr) {
-      currentCurrency = curr;
-      document.querySelectorAll('[id^="btn-curr-"]').forEach(b => {
-        b.className = 'px-1.5 py-0.5 rounded font-bold text-slate-400 hover:text-white';
-      });
-      document.getElementById(`btn-curr-${curr}`).className = 'px-1.5 py-0.5 rounded font-bold bg-indigo-600 text-white';
-
-      updateDisplayedPrices();
-    }
-
-    function formatPrice(gbpVal) {
-      const converted = gbpVal * currencyMultipliers[currentCurrency];
-      return `${currencySymbols[currentCurrency]}${converted.toFixed(2)}`;
-    }
-
-    function updateDisplayedPrices() {
-      document.getElementById('price-master').innerText = formatPrice(29.99);
-      document.getElementById('price-sticky').innerText = formatPrice(29.99);
-      renderCards();
-    }
-
-    function renderCards() {
-      const container = document.getElementById('category-cards-container');
-      container.innerHTML = '';
-
-      CATEGORIES.forEach(cat => {
-        const row = document.createElement('div');
-        row.className = 'glass-panel p-3.5 rounded-xl flex items-center justify-between gap-3 border border-white/5 active:border-indigo-500/40 transition';
-        row.innerHTML = `
-          <div class="flex-1 min-w-0">
-            <div class="flex items-center gap-2 mb-0.5">
-              <span class="text-xs font-bold text-white truncate">${cat.title}</span>
-              <span class="text-[9px] font-mono text-indigo-400 px-1.5 py-0.2 rounded bg-indigo-500/10 shrink-0">${cat.count}</span>
+            <div class="flex items-center space-x-6">
+                <span class="hidden sm:inline text-slate-400">Surrey, United Kingdom</span>
+                <span class="hidden sm:inline text-slate-700">|</span>
+                <a href="mailto:contact@mvw-partners.co.uk" class="text-white font-medium hover:text-blue-300 transition">
+                    contact@mvw-partners.co.uk
+                </a>
             </div>
-            <p class="text-[11px] text-slate-400 truncate">${cat.desc}</p>
-          </div>
+        </div>
+    </div>
 
-          <div class="flex items-center gap-2.5 shrink-0">
-            <span class="font-mono font-bold text-xs text-white">${formatPrice(cat.price)}</span>
-            <a 
-              href="${PAYHIP_SINGLE_CATEGORY_URL}"
-              class="tap-effect px-3 py-1.5 rounded-lg bg-white/10 hover:bg-indigo-600 text-white font-bold text-xs transition"
-            >
-              Get
+    <!-- Sticky Executive Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-3.5 flex items-center justify-between">
+            
+            <!-- Transparent Vector MVW Partners Logo -->
+            <a href="#" class="flex items-center space-x-4 group" aria-label="MVW Partners Home">
+                <svg class="h-12 w-auto transition-transform duration-300 group-hover:scale-[1.02]" viewBox="0 0 332 175" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="10,130 34,130 74,10 50,10" fill="#18243E"/>
+                    <polygon points="72,76 96,76 118,10 94,10" fill="#18243E"/>
+                    <polygon points="134,130 158,130 198,10 174,10" fill="#18243E"/>
+                    <polygon points="50,10 74,10 96,76 72,76" fill="#4E7496"/>
+                    <polygon points="94,10 118,10 158,130 134,130" fill="#4E7496"/>
+                    <polygon points="174,10 198,10 238,130 214,130" fill="#4E7496"/>
+                    <polygon points="214,130 238,130 260,64 236,64" fill="#18243E"/>
+                    <polygon points="258,130 282,130 322,10 298,10" fill="#18243E"/>
+                    <polygon points="236,64 260,64 282,130 258,130" fill="#4E7496"/>
+                    <text x="166" y="166" text-anchor="middle" fill="#18243E" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="21" letter-spacing="10">PARTNERS</text>
+                </svg>
+                <div class="hidden sm:block border-l border-slate-200 pl-4">
+                    <span class="block font-display font-bold text-sm text-mvw-navy tracking-tight">MVW Partners</span>
+                    <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wider">Procurement &amp; Supply Chain</span>
+                </div>
             </a>
-          </div>
-        `;
-        container.appendChild(row);
-      });
-    }
 
-    function openVaultCheckout() {
-      window.location.href = PAYHIP_VAULT_URL;
-    }
+            <!-- Navigation Links -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-slate-700">
+                <a href="#how-it-works" class="nav-link hover:text-mvw-navy transition">Operating Model</a>
+                <a href="#sectors" class="nav-link hover:text-mvw-navy transition">Supply Verticals</a>
+                <a href="#process" class="nav-link hover:text-mvw-navy transition">Execution Protocol</a>
+                <a href="#contact" class="nav-link hover:text-mvw-navy transition">Procurement Desk</a>
+            </nav>
 
-    window.addEventListener('DOMContentLoaded', () => {
-      renderCards();
-      
-      const bgImg = document.getElementById('griffith-bg-art');
-      if (bgImg) {
-        bgImg.src = '_femto_griffith_render_2__by_wtfbooomsh_dfechiv-fullview.jpg';
-      }
-    });
-  </script>
+            <!-- Direct Action CTA -->
+            <div class="flex items-center space-x-3">
+                <a href="#contact" class="px-5 py-2.5 rounded-lg bg-mvw-navy hover:bg-slate-800 text-white font-display font-semibold text-sm transition shadow-sm flex items-center space-x-2">
+                    <span>Contact &amp; RFQ Desk</span>
+                    <span class="text-blue-300">→</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg relative text-white py-24 lg:py-32 border-b border-slate-800 overflow-hidden">
+        <div class="ambient-light w-[650px] h-[650px] rounded-full absolute -top-40 -left-32 pointer-events-none"></div>
+        <div class="ambient-light w-[550px] h-[550px] rounded-full absolute bottom-0 right-0 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-14 items-center">
+                
+                <div class="lg:col-span-7 reveal">
+                    <div class="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-md bg-white/[0.06] border border-white/15 text-xs font-semibold uppercase tracking-widest text-blue-200 mb-7">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                        <span>Institutional Procurement &amp; Contract Management</span>
+                    </div>
+                    
+                    <h1 class="font-display text-4xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.1] mb-6">
+                        Precision Fulfilment for Public &amp; Commercial Contracts.
+                    </h1>
+                    
+                    <p class="text-slate-300 text-lg leading-relaxed mb-10 max-w-2xl font-normal">
+                        MVW Partners acts as a principal supply chain partner across the United Kingdom. We bridge the gap between public contracting authorities and tier-one trade manufacturers—delivering specification-compliant hardware, furniture, equipment, and licensing with single-source accountability.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#how-it-works" class="px-7 py-4 rounded-lg bg-white text-mvw-navy font-display font-bold text-sm hover:bg-slate-100 transition shadow-lg">
+                            Explore Our Operating Model
+                        </a>
+                        <a href="#contact" class="px-7 py-4 rounded-lg bg-white/[0.07] border border-white/20 text-white font-display font-semibold text-sm hover:bg-white/[0.12] transition">
+                            View Procurement Desk Directory
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Architectural Supply Chain Flow Card -->
+                <div class="lg:col-span-5 reveal delay-200">
+                    <div class="bg-slate-900/90 backdrop-blur-xl border border-slate-700/80 rounded-2xl p-8 shadow-2xl relative">
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+                            <span class="font-mono text-xs uppercase tracking-widest text-blue-400">ARCH // SUPPLY CHAIN BRIDGE</span>
+                            <span class="text-xs font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded">UK-Wide</span>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/80 hover:border-slate-600 transition">
+                                <div class="flex justify-between items-center mb-1.5">
+                                    <span class="font-display font-bold text-sm text-white">01. Contracting Authorities</span>
+                                    <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 uppercase">Buyer</span>
+                                </div>
+                                <p class="text-xs text-slate-400 leading-relaxed">Local Councils, National Parks, NHS Trusts &amp; Educational Estates publish technical specifications.</p>
+                            </div>
+
+                            <div class="flex items-center justify-center py-1">
+                                <div class="px-5 py-2 rounded-full bg-gradient-to-r from-mvw-navy to-mvw-blue border border-blue-400/30 text-white text-xs font-bold tracking-wider uppercase shadow-lg">
+                                    ⇅ Principal Partner: MVW Partners ⇅
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/80 hover:border-slate-600 transition">
+                                <div class="flex justify-between items-center mb-1.5">
+                                    <span class="font-display font-bold text-sm text-white">02. Accredited Trade Manufacturers</span>
+                                    <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 uppercase">Fulfilment</span>
+                                </div>
+                                <p class="text-xs text-slate-400 leading-relaxed">Vetted UK &amp; European trade wholesalers manufacture to specification and dispatch directly to site.</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-7 pt-5 border-t border-slate-800 grid grid-cols-3 gap-3 text-center">
+                            <div>
+                                <div class="font-display font-extrabold text-lg text-white">100%</div>
+                                <div class="text-[11px] text-slate-400">Spec Adherence</div>
+                            </div>
+                            <div>
+                                <div class="font-display font-extrabold text-lg text-white">30-Day</div>
+                                <div class="text-[11px] text-slate-400">Standard Terms</div>
+                            </div>
+                            <div>
+                                <div class="font-display font-extrabold text-lg text-white">Turnkey</div>
+                                <div class="text-[11px] text-slate-400">Direct Freight</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- How Our Business Works (Dual-Audience Clarity) -->
+    <section id="how-it-works" class="py-24 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-3xl mb-16 reveal">
+                <span class="font-mono text-mvw-blue font-semibold uppercase tracking-widest text-xs">01 // OPERATING ARCHITECTURE</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-mvw-navy mt-2 tracking-tight">
+                    How MVW Partners Operates
+                </h2>
+                <p class="text-slate-600 mt-4 leading-relaxed text-base">
+                    We streamline complex supply chains by acting as the principal contracting entity between institutional buyers and commercial manufacturers. We handle the regulatory compliance, tender management, and consolidated billing while utilizing direct factory-to-site logistics.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                
+                <!-- For Buyers -->
+                <div class="exec-card p-8 sm:p-10 rounded-2xl bg-slate-50 border border-slate-200/90 flex flex-col justify-between reveal">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="px-3 py-1 rounded bg-mvw-navy text-white text-xs font-bold uppercase tracking-wider">
+                                For Public &amp; Commercial Buyers
+                            </span>
+                            <span class="font-mono text-xs text-slate-400">DEMAND SIDE</span>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-mvw-navy mb-3">
+                            Single-Source Accountability for Supply Contracts
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Contracting authorities engage MVW Partners as their prime supplier. We assume full operational responsibility for sourcing goods that meet stringent technical, environmental, and durability criteria—removing the administrative burden of onboarding multiple trade factories.
+                        </p>
+                        <ul class="space-y-3.5 text-sm text-slate-700 mb-8">
+                            <li class="flex items-start space-x-3">
+                                <span class="text-mvw-blue font-bold mt-0.5">■</span>
+                                <span><strong>Procurement Act 2023 Aligned:</strong> Supporting public bodies with agile, compliant below-threshold SME contract execution.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="text-mvw-blue font-bold mt-0.5">■</span>
+                                <span><strong>Verified Technical Submittals:</strong> Every bid is supported by official manufacturer data sheets, FSC/ISO certifications, and commercial warranties.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="text-mvw-blue font-bold mt-0.5">■</span>
+                                <span><strong>Consolidated Administration:</strong> One purchase order, one dedicated account lead, and coordinated direct-to-site UK delivery.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200/80">
+                        <a href="#contact" class="inline-flex items-center font-display font-bold text-sm text-mvw-navy hover:text-mvw-blue transition">
+                            View Buyer Contact Details →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- For Trade Manufacturers / Suppliers -->
+                <div class="exec-card p-8 sm:p-10 rounded-2xl bg-mvw-navy text-white border border-slate-800 flex flex-col justify-between reveal delay-100">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="px-3 py-1 rounded bg-mvw-blue text-white text-xs font-bold uppercase tracking-wider">
+                                For Trade Manufacturers &amp; Wholesalers
+                            </span>
+                            <span class="font-mono text-xs text-slate-400">SUPPLY SIDE</span>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-white mb-3">
+                            Institutional Order Volume Without Tender Overhead
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Leading trade manufacturers often miss out on public sector contracts due to the time required to monitor portals and prepare tender documentation. MVW Partners serves as your dedicated external procurement channel.
+                        </p>
+                        <ul class="space-y-3.5 text-sm text-slate-200 mb-8">
+                            <li class="flex items-start space-x-3">
+                                <span class="text-blue-400 font-bold mt-0.5">■</span>
+                                <span><strong>Zero Bidding Bureaucracy:</strong> We manage the tender portals, compliance matrices, and contracting authority communications.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="text-blue-400 font-bold mt-0.5">■</span>
+                                <span><strong>Structured Commercial RFQs:</strong> We issue clear, itemized specification schedules so your trade desk can price orders rapidly.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="text-blue-400 font-bold mt-0.5">■</span>
+                                <span><strong>Direct Drop-Ship Fulfilment:</strong> Upon contract award, we place a commercial purchase order with your team for direct dispatch to the client site.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800">
+                        <a href="#contact" class="inline-flex items-center font-display font-bold text-sm text-blue-300 hover:text-white transition">
+                            Submit Trade Quotations to Our Desk →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Multi-Industry Supply Verticals -->
+    <section id="sectors" class="py-24 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 reveal">
+                <div>
+                    <span class="font-mono text-mvw-blue font-semibold uppercase tracking-widest text-xs">02 // MULTI-SECTOR CAPABILITIES</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-mvw-navy mt-2 tracking-tight">Core Procurement Verticals</h2>
+                </div>
+                <p class="text-slate-600 text-sm max-w-md mt-3 md:mt-0">
+                    Our agile supply chain architecture enables us to fulfill commercial-off-the-shelf (COTS) and specification-built contracts across four core industries.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Vertical 1 -->
+                <div class="exec-card bg-white p-7 rounded-xl border border-slate-200/90 flex flex-col justify-between reveal">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="w-10 h-10 rounded-lg bg-mvw-navy text-white font-mono font-bold text-xs flex items-center justify-center">01</span>
+                            <span class="font-mono text-[11px] text-slate-400">CPV 39100000</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-mvw-navy mb-2.5">Commercial &amp; Exterior Furniture</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-6">
+                            Heavy-duty public realm, hospitality, office, and educational furniture engineered for high-traffic durability and permanent outdoor weather resistance.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-[11px] font-semibold text-mvw-blue flex items-center justify-between">
+                        <span>FSC &amp; 15-Yr Warranty</span>
+                        <span>→</span>
+                    </div>
+                </div>
+
+                <!-- Vertical 2 -->
+                <div class="exec-card bg-white p-7 rounded-xl border border-slate-200/90 flex flex-col justify-between reveal delay-100">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="w-10 h-10 rounded-lg bg-mvw-navy text-white font-mono font-bold text-xs flex items-center justify-center">02</span>
+                            <span class="font-mono text-[11px] text-slate-400">CPV 48000000</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-mvw-navy mb-2.5">IT Hardware &amp; Software Licensing</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-6">
+                            Commercial computing hardware, networking peripherals, audio-visual estates, and authorized enterprise SaaS software license renewals.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-[11px] font-semibold text-mvw-blue flex items-center justify-between">
+                        <span>Authorised Supply</span>
+                        <span>→</span>
+                    </div>
+                </div>
+
+                <!-- Vertical 3 -->
+                <div class="exec-card bg-white p-7 rounded-xl border border-slate-200/90 flex flex-col justify-between reveal delay-200">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="w-10 h-10 rounded-lg bg-mvw-navy text-white font-mono font-bold text-xs flex items-center justify-center">03</span>
+                            <span class="font-mono text-[11px] text-slate-400">CPV 35110000</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-mvw-navy mb-2.5">Industrial, Site &amp; Safety Equipment</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-6">
+                            Personal protective equipment (PPE), municipal maintenance hardware, storage systems, and commercial tooling for local authorities and estates.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-[11px] font-semibold text-mvw-blue flex items-center justify-between">
+                        <span>UKCA / ISO Rated</span>
+                        <span>→</span>
+                    </div>
+                </div>
+
+                <!-- Vertical 4 -->
+                <div class="exec-card bg-white p-7 rounded-xl border border-slate-200/90 flex flex-col justify-between reveal delay-300">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="w-10 h-10 rounded-lg bg-mvw-navy text-white font-mono font-bold text-xs flex items-center justify-center">04</span>
+                            <span class="font-mono text-[11px] text-slate-400">CPV 30000000</span>
+                        </div>
+                        <h3 class="font-display font-bold text-lg text-mvw-navy mb-2.5">Public Estate &amp; Operational Goods</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-6">
+                            Bespoke below-threshold supply fulfilment for national parks, universities, healthcare trusts, and emergency service departments nationwide.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-[11px] font-semibold text-mvw-blue flex items-center justify-between">
+                        <span>Nationwide UK Freight</span>
+                        <span>→</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4-Step Execution Protocol -->
+    <section id="process" class="py-24 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <span class="font-mono text-mvw-blue font-semibold uppercase tracking-widest text-xs">03 // QUALITY ASSURANCE</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-mvw-navy mt-2 tracking-tight">
+                    4-Stage Contract Execution Protocol
+                </h2>
+                <p class="text-slate-600 text-sm mt-3">
+                    Every contract managed by MVW Partners follows a structured quality and logistics protocol from initial specification audit to final site sign-off.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
+                <div class="p-6 rounded-xl bg-slate-50 border border-slate-200/80">
+                    <div class="font-mono text-xs font-bold uppercase tracking-widest text-mvw-blue mb-2">STAGE 01</div>
+                    <h4 class="font-display font-bold text-lg text-mvw-navy mb-2">Specification Audit</h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        We analyze the buyer's technical schedule, material durability criteria, RAL finishes, and mandatory warranty thresholds.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-xl bg-slate-50 border border-slate-200/80">
+                    <div class="font-mono text-xs font-bold uppercase tracking-widest text-mvw-blue mb-2">STAGE 02</div>
+                    <h4 class="font-display font-bold text-lg text-mvw-navy mb-2">Trade Partner Allocation</h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        We issue structured commercial RFQs to vetted UK and European manufacturers, locking in wholesale pricing and technical data sheets.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-xl bg-slate-50 border border-slate-200/80">
+                    <div class="font-mono text-xs font-bold uppercase tracking-widest text-mvw-blue mb-2">STAGE 03</div>
+                    <h4 class="font-display font-bold text-lg text-mvw-navy mb-2">Direct-to-Site Dispatch</h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Upon contract award, goods are dispatched directly from the manufacturer’s depot to the contracting authority's site anywhere in the UK.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-xl bg-slate-50 border border-slate-200/80">
+                    <div class="font-mono text-xs font-bold uppercase tracking-widest text-mvw-blue mb-2">STAGE 04</div>
+                    <h4 class="font-display font-bold text-lg text-mvw-navy mb-2">Acceptance &amp; Warranty</h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        We oversee delivery sign-off, manage 30-day public sector invoicing, and register long-term manufacturer warranties and spare parts access.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Executive Procurement & Contact Directory (No Clunky Form) -->
+    <section id="contact" class="py-24 bg-slate-100/80">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="max-w-3xl mb-14 reveal">
+                <span class="font-mono text-mvw-blue font-semibold uppercase tracking-widest text-xs">04 // CORPORATE COMMUNICATIONS</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-mvw-navy mt-2 tracking-tight">
+                    Procurement &amp; Trade Enquiries Desk
+                </h2>
+                <p class="text-slate-600 text-base mt-3 leading-relaxed">
+                    Whether you are a <strong>Trade Manufacturer</strong> submitting wholesale pricing for an active MVW Partners RFQ or a <strong>Contracting Authority</strong> inviting tender submissions, please direct all correspondence and PDF attachments to our central desk below.
+                </p>
+            </div>
+
+            <!-- Main Direct Contact Banner -->
+            <div class="bg-mvw-navy text-white rounded-2xl p-8 sm:p-12 shadow-xl border border-slate-800 mb-8 reveal">
+                <div class="grid lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7">
+                        <span class="inline-block px-3 py-1 rounded bg-blue-500/20 border border-blue-400/30 text-blue-300 font-mono text-xs uppercase tracking-wider mb-4">
+                            Primary Electronic Dispatch
+                        </span>
+                        <h3 class="font-display text-2xl sm:text-3xl font-extrabold text-white mb-2">
+                            contact@mvw-partners.co.uk
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            All commercial quotations, product specification data sheets, warranty confirmations, and tender invitations are processed through our central procurement inbox.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-5 flex flex-col sm:flex-row lg:justify-end gap-3.5">
+                        <a href="mailto:contact@mvw-partners.co.uk" class="px-6 py-4 rounded-xl bg-white text-mvw-navy font-display font-bold text-sm text-center hover:bg-slate-100 transition shadow-lg">
+                            Launch Email Client
+                        </a>
+                        <button onclick="copyEmail()" id="copyBtn" class="px-6 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white font-display font-semibold text-sm text-center transition">
+                            Copy Email Address
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3-Column Corporate Information Grid -->
+            <div class="grid md:grid-cols-3 gap-6 reveal delay-100">
+                
+                <!-- Card 1: Trade Suppliers -->
+                <div class="exec-card bg-white p-7 rounded-xl border border-slate-200/90">
+                    <div class="font-mono text-xs font-bold uppercase text-mvw-blue mb-2">RFQ SUBMISSIONS</div>
+                    <h4 class="font-display font-bold text-lg text-mvw-navy mb-2">Trade Supplier Quotations</h4>
+                    <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                        When replying to an active MVW Partners RFQ, please include the <strong>RFQ Reference Number</strong> in your email subject line along with itemized trade pricing, UK freight costs, and PDF data sheets.
+                    </p>
+                    <div class="text-xs font-semibold text-mvw-navy pt-3 border-t border-slate-100">
+                        Target Turnaround: &lt; 4 Business Hours
+                    </div>
+                </div>
+
+                <!-- Card 2: Corporate Web & Portal -->
+                <div class="exec-card bg-white p-7 rounded-xl border border-slate-200/90">
+                    <div class="font-mono text-xs font-bold uppercase text-mvw-blue mb-2">DIGITAL PORTAL</div>
+                    <h4 class="font-display font-bold text-lg text-mvw-navy mb-2">Official Corporate Domain</h4>
+                    <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                        Verified supplier registration, procurement compliance documentation, and corporate updates are maintained under our primary UK domain.
+                    </p>
+                    <div class="text-xs font-semibold text-mvw-navy pt-3 border-t border-slate-100">
+                        Web: www.mvw-partners.co.uk
+                    </div>
+                </div>
+
+                <!-- Card 3: Operations & Coverage -->
+                <div class="exec-card bg-white p-7 rounded-xl border border-slate-200/90">
+                    <div class="font-mono text-xs font-bold uppercase text-mvw-blue mb-2">REGIONAL BASE</div>
+                    <h4 class="font-display font-bold text-lg text-mvw-navy mb-2">Operations &amp; Coverage</h4>
+                    <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                        Headquartered in Surrey, South East England, coordinating direct-to-site manufacturer freight across England, Wales, and Mainland UK.
+                    </p>
+                    <div class="text-xs font-semibold text-mvw-navy pt-3 border-t border-slate-100">
+                        Hours: Mon–Fri | 08:30 – 17:30 GMT
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Corporate Footer -->
+    <footer class="bg-mvw-dark text-slate-400 py-14 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            
+            <div class="flex items-center space-x-4">
+                <svg class="h-9 w-auto" viewBox="0 0 332 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="10,130 34,130 74,10 50,10" fill="#94A3B8"/>
+                    <polygon points="72,76 96,76 118,10 94,10" fill="#94A3B8"/>
+                    <polygon points="134,130 158,130 198,10 174,10" fill="#94A3B8"/>
+                    <polygon points="50,10 74,10 96,76 72,76" fill="#4E7496"/>
+                    <polygon points="94,10 118,10 158,130 134,130" fill="#4E7496"/>
+                    <polygon points="174,10 198,10 238,130 214,130" fill="#4E7496"/>
+                    <polygon points="214,130 238,130 260,64 236,64" fill="#94A3B8"/>
+                    <polygon points="258,130 282,130 322,10 298,10" fill="#94A3B8"/>
+                    <polygon points="236,64 260,64 282,130 258,130" fill="#4E7496"/>
+                </svg>
+                <div>
+                    <div class="font-display font-bold text-white text-sm tracking-wide">MVW PARTNERS</div>
+                    <div class="text-slate-500">Commercial Procurement &amp; Supply Chain Management</div>
+                </div>
+            </div>
+
+            <div class="text-center md:text-right space-y-1.5">
+                <div class="text-slate-300 font-medium">
+                    <a href="mailto:contact@mvw-partners.co.uk" class="hover:text-white transition">contact@mvw-partners.co.uk</a>
+                    <span class="mx-2 text-slate-600">|</span>
+                    <a href="https://www.mvw-partners.co.uk" class="hover:text-white transition">www.mvw-partners.co.uk</a>
+                </div>
+                <div class="text-slate-500">&copy; 2026 MVW Partners. All rights reserved. Surrey, United Kingdom.</div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        // Smooth IntersectionObserver for Staggered Corporate Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // 1-Click Copy Email Functionality
+        function copyEmail() {
+            navigator.clipboard.writeText('contact@mvw-partners.co.uk');
+            const btn = document.getElementById('copyBtn');
+            const originalText = btn.innerText;
+            btn.innerText = '✓ Copied to Clipboard';
+            btn.classList.add('border-emerald-500', 'text-emerald-300');
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.classList.remove('border-emerald-500', 'text-emerald-300');
+            }, 2500);
+        }
+    </script>
 </body>
 </html>
